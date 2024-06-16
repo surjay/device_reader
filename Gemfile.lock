@@ -91,6 +91,7 @@ GEM
     erubi (1.13.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hiredis (0.6.3)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -110,6 +111,8 @@ GEM
     minitest (5.23.1)
     msgpack (1.7.2)
     mutex_m (0.2.0)
+    nest (3.2.0)
+      redic
     net-imap (0.4.12)
       date
       net-protocol
@@ -132,6 +135,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
+    ohm (3.1.1)
+      nest (~> 3)
+      redic (~> 1.5.0)
+      stal
     pg (1.5.6)
     psych (5.1.2)
       stringio
@@ -178,12 +185,16 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redic (1.5.3)
+      hiredis
     redis (5.2.0)
       redis-client (>= 0.22.0)
     redis-client (0.22.2)
       connection_pool
     reline (0.5.9)
       io-console (~> 0.5)
+    stal (0.3.0)
+      redic (~> 1.5)
     stringio (3.1.1)
     thor (1.3.1)
     timeout (0.4.1)
@@ -206,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  ohm (~> 3.0)
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.4)
